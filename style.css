@@ -6,8 +6,9 @@
   f;
 }
 body {
-    height: 100vh;
+    display: flex;
     background-color: #F6F0E2;
+    min-height: 100vh;
 }
 /* Menu */ 
 nav h1 {
@@ -21,6 +22,7 @@ nav.menu-lateral {
     background-color: #000000;
     padding: 40px 0px 40px 0px;
     position: fixed;
+    display: block;
 }
 nav.recolher {
     width: 100%;
@@ -81,17 +83,94 @@ li.item-menu a {
     margin-top: 25px;
 }
 /* Comentário*/
-.comentario {
-display: flex;
-width: 764px;
-height: 165px;
-margin: auto;
-border: 1px solid red;
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.star-rater { 
-display: flex;
-text-align: left;
-width: 152px;
-height: 32px;
-font-size: 35px;
+.comentario {
+   padding: 20px;
+   width: 500px;
+
+}
+.head {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.text {
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+.commentbox{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+.commentbox > img {
+    width: 40px;
+    height: 40px ;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+    object-position: center;
+}
+.content {
+    width: 100%;
+}
+.user {
+    border: none;
+    outline:none;
+    margin: 5px 0;
+    margin-left: 20px;
+    padding: 10px;
+}
+.commentinput  > input{
+    border: none;
+    padding: 10px;
+    padding-left: 0;
+    outline: none;
+    border-bottom:2px solid  #F1B5D8;
+    margin-bottom: 10px;
+    width: 95%;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    color: #808080;
+}
+.buttons button {
+    padding: 5px 10px;
+    text-transform: uppercase;
+    color: #000000;
+    background-color: #DBB3CA;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.buttons button.abled {
+    background-color: #F1B5D8;
+}
+.parents {
+    display: flex;
+    margin-bottom: 30px;
+}
+.parents h1{
+    font-size: 0.9em;
+}
+.parents p {
+    margin: 10px 0; 
+    font-size: 0.9em;
+}
+.parents >img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+} 
+.date {
+    color: #808080;
+    font-size: 0.8em;
 }

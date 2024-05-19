@@ -1,3 +1,4 @@
+// Estrelas
 class  StarRater extends HTMLElement {
     constructor () {
         super()
@@ -77,3 +78,55 @@ class  StarRater extends HTMLElement {
 }
 
 customElements.define('star-rater',StarRater)
+
+// Comentário
+
+const userId = {
+    name:null,
+    identity:null,
+    image:null,
+    message: null,
+    date: null
+}
+const userComment = document.querySelector(".usercomment");
+const publishBtn = document.querySelector("#publish");
+const comments = document.querySelector(".comments");
+const userName = document.querySelector(".user")
+
+userComment.addEventListener("input", e => {
+    if (!userComment.value) {
+        publishBtn.setAttribute("disabled","disable");
+        publishBtn.classList.remove("abled");  
+    }else {
+        publishBtn.removeAttribute("disabled");
+        publishBtn.classList.add("abled")
+    }
+})
+
+
+function addPost() {
+    if(!userComment.value) return;
+    userId.name = userName.value;
+    if(userId.name === "Anônimo"){
+        userId.identity = false;
+        userId.image = "./image/user1.png"; 
+    }else{
+        userId.identity = true;
+        userId.image = "./image/user1.png"
+    }
+    userId.message = userComment.value;
+    userId.date = new Date().toLocaleString();
+    let published =
+    `<div class="parents">
+        <img src="${userId.image}">
+         <div>
+            <h1>${userId.name}</h1>
+            <p>${userId.message}</p>
+            <span class="date">${userId.date}</span>
+         </div>
+    </div>`;
+    comments.innerHTML += published;
+    userComment.value = ""
+}
+
+publishBtn.addEventListener("click",addPost);
