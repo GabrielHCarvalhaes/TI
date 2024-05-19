@@ -63,6 +63,8 @@ class StarRater extends HTMLElement {
         const style = document.createElement('style');
         style.textContent = `
             .star {
+                width: 40px;
+                height: 40px;
                 font-size: 40px;
                 cursor: pointer;
             }
@@ -119,10 +121,10 @@ function addPost() {
         <div>
             <h1>${userId.name}</h1>
             <p>${userId.message}</p>
-            <span class="date">${userId.date}</span>
             <div class="user-rating">
                 ${createStarsHTML(userId.rating)}
             </div>
+            <span class="date">${userId.date}</span>
         </div>
     </div>`;
     comments.innerHTML += published;
@@ -139,3 +141,15 @@ function createStarsHTML(rating) {
     }
     return starsHTML;
 }
+
+// Menu toggle
+const menuToggle = document.getElementById("menu-toggle");
+const menuLateral = document.querySelector(".menu-lateral");
+
+menuToggle.addEventListener("click", () => {
+    if (menuLateral.style.display === "block") {
+        menuLateral.style.display = "none";
+    } else {
+        menuLateral.style.display = "block";
+    }
+});
