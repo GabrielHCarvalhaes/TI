@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-seripush
+  f;
 }
 body {
     display: flex;
@@ -16,7 +17,7 @@ nav h1 {
     padding: 20px 5%;
 }
 nav.menu-lateral {
-    width: 260px;
+    width:260px;
     height: 100%;
     background-color: #000000;
     padding: 40px 0px 40px 0px;
@@ -32,11 +33,12 @@ nav.recolher > i {
     font-size: 24px;
     cursor: pointer;
 }
+    
 nav ul {
     list-style: none;
 }
 li.item-menu a:hover {
-    background: rgba(63, 62, 62, 0.5);
+    background:rgba(63, 62, 62, 0.5);
     color: #F1B5D8;
 }
 li.item-menu a {
@@ -50,9 +52,9 @@ li.item-menu a {
     display: flex;
     transition: 1s;
 }
-#Perfil a {
+#Perfil a{
     color: #F1B5D8;
-    background: rgba(63, 62, 62, 0.5);
+    background:rgba(63, 62, 62, 0.5);
 }
 .cadastro {
     text-align: center;
@@ -61,7 +63,9 @@ li.item-menu a {
     width: 220px;
     height: 157px;
     padding: auto;
-    border-radius: 20px;
+    border-radius:20px;
+    
+
 }
 .cadastro a {
     font-size: 40px;
@@ -84,11 +88,12 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin:auto;
 }
 .comentario {
-    padding: 20px;
-    width: 500px;
+   padding: 20px;
+   width: 500px;
+
 }
 .comentario hr {
     width: 100%;
@@ -97,11 +102,13 @@ footer {
     margin-bottom: 20px;
     padding: 0;
 }
+
+
 .text {
     margin: 10px 0;
     font-size: 15px;
 }
-.commentbox {
+.commentbox{
     display: flex;
     justify-content: space-around;
     padding: 30px 60px;
@@ -119,16 +126,16 @@ footer {
 }
 .user {
     border: none;
-    outline: none;
+    outline:none;
     margin: 5px 0;
     padding: 10px;
 }
-.commentinput > input {
+.commentinput  > input{
     border: none;
     padding: 10px;
     padding-left: 0;
     outline: none;
-    border-bottom: 2px solid #F1B5D8;
+    border-bottom:2px solid  #F1B5D8;
     width: 95%;
 }
 .buttons {
@@ -155,68 +162,25 @@ button#publish {
 .parents {
     display: flex;
     margin-bottom: 30px;
-    padding: auto;
+    padding:auto;
 }
-.parents h1 {
+.parents h1{
     font-size: 0.9em;
 }
 .parents p {
-    margin: 10px 0;
+    margin: 10px 0; 
     font-size: 0.9em;
 }
-.parents > img {
+.parents >img {
     width: 40px;
     height: 40px;
-    margin-right: 10px;
+    margin-right:10px; 
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
-}
+} 
 .date {
     color: #808080;
     font-size: 0.8em;
     float: right;
-}
-.menu-toggle {
-    display: none;
-}
-/* Responsividade */
-@media(max-width: 800px) {
-    body {
-        flex-direction: column;
-    }
-
-    nav.menu-lateral {
-        display: flex;
-        width: 100%;
-        height: auto;
-        position: static;
-    }
-
-    .menu-toggle {
-        display: block;
-        font-size: 2rem;
-        color: white;
-        background-color: #000000;
-        border-radius: 50%;
-        padding: 10px;
-        margin: 15px;
-        position: fixed;
-        left: 1;
-        cursor: pointer;
-        z-index: 1001;
-    }
-
-    .comentario {
-        width: 90%;
-    }
-
-    .commentbox {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .commentbox > img {
-        margin: 0 0 20px 0;
-    }
 }

@@ -142,12 +142,13 @@ function createStarsHTML(rating) {
     return starsHTML;
 }
 
+ // Menu toggle
 // Menu toggle
 const menuToggle = document.getElementById("menu-toggle");
 const menuLateral = document.querySelector(".menu-lateral");
 
 menuToggle.addEventListener("click", () => {
-    if (menuLateral.style.display === "block") {
+    if (menuLateral.style.display === "block" || menuLateral.style.display === "") {
         menuLateral.style.display = "none";
     } else {
         menuLateral.style.display = "block";
