@@ -77,6 +77,9 @@ customElements.define('star-rater', StarRater);
 
 // Comentário
 
+const commentKey = 'comments';
+let commentsData = JSON.parse(localStorage.getItem(commentKey)) || [];
+
 const userId = {
     name: null,
     identity: null,
@@ -129,7 +132,18 @@ function addPost() {
     </div>`;
     comments.innerHTML += published;
     userComment.value = "";
+
+    commentsData.push({
+        name: userId.name,
+        identity: userId.identity,
+        image: userId.image,
+        message: userId.message,
+        date: userId.date,
+        rating: userId.rating
+    });
+    localStorage.setItem(commentKey, JSON.stringify(commentsData));
 }
+
 
 publishBtn.addEventListener("click", addPost);
 
@@ -176,4 +190,25 @@ function toggleMode() {
     } else {
         html.classList.remove("light");
     }
+
+    commentsData = JSON.parse(localStorage.getItem(commentKey)) || [];
+    renderComments();
 });
+function renderComments() {
+    comments.innerHTML = '';
+    commentsData.forEach(comment => {
+        let published = `
+        <div class="parents">
+            <img src="${comment.image}">
+            <div>
+                <h1>${comment.name}</h1>
+                <p>${comment.message}</p>
+                <div class="user-rating">
+                    ${createStarsHTML(comment.rating)}
+                </div>
+                <span class="date">${comment.date}</span>
+            </div>
+        </div>`;
+        comments.innerHTML += published;
+    });
+}
