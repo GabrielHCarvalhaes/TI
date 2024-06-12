@@ -142,7 +142,6 @@ function createStarsHTML(rating) {
     return starsHTML;
 }
 
- // Menu toggle
 // Menu toggle
 const menuToggle = document.getElementById("menu-toggle");
 const menuLateral = document.querySelector(".menu-lateral");
