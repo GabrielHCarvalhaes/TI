@@ -142,6 +142,8 @@ function createStarsHTML(rating) {
     return starsHTML;
 }
 
+
+
 // Menu toggle
 const menuToggle = document.getElementById("menu-toggle");
 const menuLateral = document.querySelector(".menu-lateral");
@@ -151,5 +153,27 @@ menuToggle.addEventListener("click", () => {
         menuLateral.style.display = "none";
     } else {
         menuLateral.style.display = "block";
+    }
+});
+
+//Thema
+function toggleMode() {
+    const html = document.documentElement;
+    html.classList.toggle("light");
+    
+    if (html.classList.contains("light")) {
+        localStorage.setItem("theme", "light");
+    } else {
+        localStorage.setItem("theme", "dark");
+    }
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    const html = document.documentElement;
+    const theme = localStorage.getItem("theme");
+
+    if (theme === "light") {
+        html.classList.add("light");
+    } else {
+        html.classList.remove("light");
     }
 });
